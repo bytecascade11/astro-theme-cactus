@@ -1,5 +1,4 @@
 ---
-// Existing imports (keep them all)
 import { type CollectionEntry, getCollection } from "astro:content";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import Note from "@/components/note/Note.astro";
@@ -14,7 +13,7 @@ const allPosts = await getAllPosts();
 const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
 const latestPosts = allPostsByDate.slice(0, MAX_POSTS);
 
-// Pinned Posts
+// Pinned Posts, set to a max of 3;
 const MAX_PINNED_POSTS = 3;
 const pinnedPosts = allPostsByDate.filter((p) => p.data.pinned).slice(0, MAX_PINNED_POSTS);
 
@@ -26,36 +25,16 @@ const latestNotes = allNotes
 	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
 ---
 
-<PageLayout meta={{ title: "Astrotech-Games" }}>
-	<!-- Top Navigation -->
-	<nav class="mb-12 border-b border-border pb-6">
-		<ul class="flex flex-wrap gap-8 text-lg font-medium">
-			<li>
-				<a href="/posts/?tag=news" class="hover:text-accent transition-colors">News</a>
-			</li>
-			<li>
-				<a href="/posts/?tag=games" class="hover:text-accent transition-colors">Games</a>
-			</li>
-			<li>
-				<a href="/posts/?tag=gadgets" class="hover:text-accent transition-colors">Gadgets</a>
-			</li>
-		</ul>
-	</nav>
-
-	<!-- Hero / Description Section -->
-	<section class="mb-16">
-		<h1 class="title mb-6 text-4xl md:text-5xl">Astrotech-Games</h1>
-		<p class="text-lg md:text-xl max-w-3xl leading-relaxed">
-			Where cutting-edge tech meets gaming. Deep dives into game development, web-based games, 
+<PageLayout meta={{ title: "Home" }}>
+	<section>
+		<h1 class="title mb-12">Hello World!</h1>
+		<p class="mb-4">
+		Where cutting-edge tech meets gaming. Deep dives into game development, web-based games, 
 			performance optimization, emerging tools, hardware reviews, and the future of interactive entertainment. 
 			Powered by Astro — fast, fun, and developer-friendly. 🎮🌵
 		</p>
-		<div class="mt-8">
-			<SocialList />
-		</div>
+		<SocialList />
 	</section>
-
-	<!-- Pinned Posts -->
 	{
 		pinnedPosts.length > 0 && (
 			<section class="mt-16">
@@ -70,20 +49,18 @@ const latestNotes = allNotes
 			</section>
 		)
 	}
-
-	<!-- Latest Posts -->
 	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Latest Posts</a></h2>
+		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
 		<ul class="space-y-4" role="list">
-			{latestPosts.map((p) => (
-				<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-					<PostPreview post={p} />
-				</li>
-			))}
+			{
+				latestPosts.map((p) => (
+					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+						<PostPreview post={p} />
+					</li>
+				))
+			}
 		</ul>
 	</section>
-
-	<!-- Notes -->
 	{
 		latestNotes.length > 0 && (
 			<section class="mt-16">
@@ -100,42 +77,4 @@ const latestNotes = allNotes
 			</section>
 		)
 	}
-
-	<!-- Footer -->
-	<footer class="mt-24 pt-12 border-t border-border text-sm text-muted">
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-			<div>
-				<h3 class="font-semibold mb-4">Astrotech-Games</h3>
-				<p class="text-muted">
-					Tech insights for gamers and developers. Exploring the intersection of performance, tools, and play.
-				</p>
-			</div>
-			<div>
-				<h4 class="font-medium mb-4">Categories</h4>
-				<ul class="space-y-2">
-					<li><a href="/posts/?tag=news" class="hover:text-accent">News</a></li>
-					<li><a href="/posts/?tag=games" class="hover:text-accent">Games</a></li>
-					<li><a href="/posts/?tag=gadgets" class="hover:text-accent">Gadgets</a></li>
-				</ul>
-			</div>
-			<div>
-				<h4 class="font-medium mb-4">Legal</h4>
-				<ul class="space-y-2">
-					<li><a href="/privacy" class="hover:text-accent">Privacy Policy</a></li>
-					<li><a href="/terms" class="hover:text-accent">Terms and Conditions</a></li>
-					<li><a href="/disclaimer" class="hover:text-accent">Disclaimer</a></li>
-				</ul>
-			</div>
-			<div>
-				<h4 class="font-medium mb-4">Connect</h4>
-				<ul class="space-y-2">
-					<li><a href="/about" class="hover:text-accent">About Us</a></li>
-					<li><a href="/contact" class="hover:text-accent">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="text-center text-muted pb-8">
-			© 2025 Astrotech-Games. All rights reserved.
-		</div>
-	</footer>
 </PageLayout>
