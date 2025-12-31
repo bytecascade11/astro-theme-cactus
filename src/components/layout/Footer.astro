@@ -1,27 +1,37 @@
 ---
-import { menuLinks, siteConfig } from "@/site.config";
+import { siteConfig } from "@/site.config";
 
 const year = new Date().getFullYear();
 ---
 
 <footer
-	class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pt-20 pb-4 text-center align-top font-semibold text-gray-600 sm:flex-row sm:justify-between sm:text-xs dark:text-gray-400"
+	class="mt-auto flex w-full flex-col items-center justify-center gap-y-4 pt-20 pb-8 text-center font-semibold text-gray-600 sm:text-xs dark:text-gray-400"
 >
-	<div class="me-0 sm:me-4">
-		&copy; {siteConfig.author}
-		{year}.<span class="inline-block">&nbsp;🚀&nbsp;{siteConfig.title}</span>
-	</div>
+	<!-- Legal / Policy Links (centered on mobile, right-aligned on desktop) -->
 	<nav
 		aria-labelledby="footer_links"
-		class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500"
+		class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm sm:gap-x-8"
 	>
-		<p id="footer_links" class="sr-only">More on this site</p>
-		{
-			menuLinks.map((link) => (
-				<a class="hover:text-global-text px-4 py-2 hover:underline sm:py-0" href={link.path}>
-					{link.title}
-				</a>
-			))
-		}
+		<p id="footer_links" class="sr-only">Legal and site information</p>
+		<a class="hover:text-global-text hover:underline" href="/about-us/">
+			About us
+		</a>
+		<a class="hover:text-global-text hover:underline" href="/contact-us/">
+			Contact us
+		</a>
+		<a class="hover:text-global-text hover:underline" href="/privacy/">
+			Privacy
+		</a>
+		<a class="hover:text-global-text hover:underline" href="/terms-and-conditions/">
+			Terms and Conditions
+		</a>
+		<a class="hover:text-global-text hover:underline" href="/disclaimer/">
+			Disclaimer
+		</a>
 	</nav>
+
+	<!-- Copyright + All rights reserved - now at the very bottom -->
+	<div class="text-xs text-muted-foreground">
+		© {year} Astrotech-Games. All rights reserved.
+	</div>
 </footer>
