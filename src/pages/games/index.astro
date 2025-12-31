@@ -12,12 +12,16 @@ const title = 'Games';
 const description = 'In-depth game reviews, recommendations, and guides';
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout 
+  title={title} 
+  description={description}
+  articleDate={undefined}
+>
   <main class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold mb-10">Games</h1>
 
     {gamesPosts.length === 0 ? (
-      <p class="text-gray-600">No game reviews yet. Add posts with <code>tags: ["Games"]</code> to see them here.</p>
+      <p class="text-gray-600">No game posts yet. Add posts with <code>tags: ["Games"]</code> to see them here.</p>
     ) : (
       <ul class="grid gap-10 md:grid-cols-2">
         {gamesPosts.map(post => (
