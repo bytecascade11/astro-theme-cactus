@@ -25,28 +25,29 @@ export const siteConfig: SiteConfig = {
 		- The link value found in src/components/layout/Header.astro L:35
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
-	title: "Astro Cactus",
+	title: "Astrotech-Games",  // ← Changed here
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
 	url: "https://astro-cactus.chriswilliams.dev/",
 };
 
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string }[] = [
+	// Optional: Add Home if you want it in the header navigation
+	// {
+	// 	path: "/",
+	// 	title: "Home",
+	// },
 	{
-		path: "/",
-		title: "Home",
+		path: "/news/",
+		title: "News",
 	},
 	{
-		path: "/about/",
-		title: "About",
+		path: "/games/",
+		title: "Games",
 	},
 	{
-		path: "/posts/",
-		title: "Blog",
-	},
-	{
-		path: "/notes/",
-		title: "Notes",
+		path: "/gadgets/",
+		title: "Gadgets",
 	},
 ];
 
