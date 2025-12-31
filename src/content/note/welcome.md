@@ -1,7 +1,7 @@
 ---
 title: Welcome to Astrotech-Games
 description: Your hub for the latest in gaming news, reviews, gadgets, and tech
-publishDate: 2025-12-31T00:00:00Z
+publishDate: "2025-12-31T00:00:00Z"
 ---
 
 Welcome to **Astrotech-Games**! 🚀
