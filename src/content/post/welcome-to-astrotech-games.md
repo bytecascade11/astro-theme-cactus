@@ -3,7 +3,6 @@ title: "Welcome to Astrotech-Games: Tech Meets Gaming"
 description: "Launching Astrotech-Games – deep dives into game development tech, web gaming, Astro-powered interactive experiences, and the tools building the future of play."
 publishDate: 2025-12-31
 tags: ["gaming", "game-development", "astro", "web-tech", "blog-launch"]
-coverImage: "/images/astrotech-games-cover.jpg" # Add your chosen cover image to public/images/
 draft: false
 ---
 
