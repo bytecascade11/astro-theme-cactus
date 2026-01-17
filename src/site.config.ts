@@ -23,47 +23,20 @@ export const siteConfig: SiteConfig = {
     - Used to construct the meta title property found in src/components/BaseHead.astro L:11 
     - The webmanifest name found in astro.config.ts L:42
     - The link value found in src/components/layout/Header.astro L:35
-    - In the footer found in src/components/layout/Footer.astro L:12
+    - In the footer found in src/components/layout/Footer.astro L:12 (but we'll override footer links)
   */
   title: "Astrotech-Games",
-  // IMPORTANT: Use your real deployed domain (from your Vercel URL)
+  // Use your actual deployed Vercel domain
   url: "https://rotechgames.vercel.app/",
 };
 
-// Used to generate links in both the Header & Footer.
-// IMPORTANT: Removed all trailing slashes → this fixes most 404 issues on Vercel.
-// Add your custom pages here so they show in navigation.
+// Links ONLY for the top navigation (Header)
+// These appear in the menu (News, Games, Gadgets) – no About/Contact/legal here
 export const menuLinks: { path: string; title: string }[] = [
-  {
-    path: "/",
-    title: "Home",
-  },
-  {
-    path: "/tags/news",
-    title: "News",
-  },
-  {
-    path: "/tags/games",
-    title: "Games",
-  },
-  {
-    path: "/tags/gadgets",
-    title: "Gadgets",
-  },
-  // Your custom pages – add them here if you want them in the top navigation
-  {
-    path: "/about-us",
-    title: "About us",
-  },
-  {
-    path: "/contact-us",
-    title: "Contact us",
-  },
-  // Legal pages usually stay only in footer, so I didn't add them here.
-  // If you want them in nav too, uncomment and add:
-  // { path: "/privacy", title: "Privacy Policy" },
-  // { path: "/terms-and-conditions", title: "Terms & Conditions" },
-  // { path: "/disclaimer", title: "Disclaimer" },
+  { path: "/", title: "Home" },             // optional – remove if you don't want Home in top nav
+  { path: "/tags/news", title: "News" },
+  { path: "/tags/games", title: "Games" },
+  { path: "/tags/gadgets", title: "Gadgets" },
 ];
 
 // https://expressive-code.com/reference/configuration/
