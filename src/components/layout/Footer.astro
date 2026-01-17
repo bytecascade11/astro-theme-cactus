@@ -1,37 +1,36 @@
 ---
-import { siteConfig } from "@/site.config";
-
 const year = new Date().getFullYear();
 ---
 
 <footer
-	class="mt-auto flex w-full flex-col items-center justify-center gap-y-4 pt-20 pb-8 text-center font-semibold text-gray-600 sm:text-xs dark:text-gray-400"
+  class="mt-auto flex w-full flex-col items-center justify-center gap-y-4 pt-20 pb-8 text-center font-semibold text-gray-600 sm:text-xs dark:text-gray-400"
 >
-	<!-- Legal / Policy Links (centered on mobile, right-aligned on desktop) -->
-	<nav
-		aria-labelledby="footer_links"
-		class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm sm:gap-x-8"
-	>
-		<p id="footer_links" class="sr-only">Legal and site information</p>
-		<a class="hover:text-global-text hover:underline" href="/about-us/">
-			About us
-		</a>
-		<a class="hover:text-global-text hover:underline" href="/contact-us/">
-			Contact us
-		</a>
-		<a class="hover:text-global-text hover:underline" href="/privacy/">
-			Privacy
-		</a>
-		<a class="hover:text-global-text hover:underline" href="/terms-and-conditions/">
-			Terms and Conditions
-		</a>
-		<a class="hover:text-global-text hover:underline" href="/disclaimer/">
-			Disclaimer
-		</a>
-	</nav>
+  <!-- Legal / Contact / About Links – only here in the footer -->
+  <nav
+    aria-labelledby="footer_links"
+    class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm sm:gap-x-8"
+  >
+    <p id="footer_links" class="sr-only">Legal and site information</p>
+    
+    <a class="hover:text-global-text hover:underline" href="/about-us">
+      About us
+    </a>
+    <a class="hover:text-global-text hover:underline" href="/contact-us">
+      Contact us
+    </a>
+    <a class="hover:text-global-text hover:underline" href="/privacy">
+      Privacy Policy
+    </a>
+    <a class="hover:text-global-text hover:underline" href="/terms-and-conditions">
+      Terms and Conditions
+    </a>
+    <a class="hover:text-global-text hover:underline" href="/disclaimer">
+      Disclaimer
+    </a>
+  </nav>
 
-	<!-- Copyright + All rights reserved - now at the very bottom -->
-	<div class="text-xs text-muted-foreground">
-		© {year} Astrotech-Games. All rights reserved.
-	</div>
+  <!-- Copyright -->
+  <div class="text-xs text-muted-foreground">
+    © {year} Astrotech-Games. All rights reserved.
+  </div>
 </footer>
