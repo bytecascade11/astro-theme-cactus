@@ -25,19 +25,14 @@ export const siteConfig: SiteConfig = {
 };
 
 /* =========================
-   HEADER (Top Navigation)
+   HEADER & FOOTER LINKS (Combined)
    ========================= */
+// Official Cactus style uses one array for both header and footer
 export const menuLinks: { path: string; title: string }[] = [
   { path: "/", title: "Home" },
   { path: "/tags/news", title: "News" },
   { path: "/tags/games", title: "Games" },
   { path: "/tags/gadgets", title: "Gadgets" },
-];
-
-/* =========================
-   FOOTER (Legal Pages)
-   ========================= */
-export const footerLinks: { path: string; title: string }[] = [
   { path: "/about-us", title: "About Us" },
   { path: "/contact-us", title: "Contact Us" },
   { path: "/privacy", title: "Privacy Policy" },
